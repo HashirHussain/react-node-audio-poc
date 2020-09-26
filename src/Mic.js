@@ -64,7 +64,7 @@ export default class Mic extends React.Component {
   }
   render() {
     return (
-      <div class="App">
+      <div>
         <button onClick={this.onStart} disabled={this.state.recording === true}>
           Start
         </button>

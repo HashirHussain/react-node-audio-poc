@@ -23,11 +23,11 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="App">
         <h1>Audio listener</h1>
         <p>
-          allow access to your system's mic and hit play button. Hit start
-          button to stop the socket events.
+          allow access to your system's mic and hit play button. Hit stop button
+          to stop the socket events.
         </p>
         <Mic onRecordingReceive={this.onRecordingReceive}></Mic>
         <ChatBox socket={socket}></ChatBox>
