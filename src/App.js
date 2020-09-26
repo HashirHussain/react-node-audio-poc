@@ -1,24 +1,22 @@
-import React from "react";
-import socketIOClient from "socket.io-client";
-import Mic from "./Mic";
-import ChatBox from "./ChatBox";
-import "./App.css";
+import React from 'react';
+import socketIOClient from 'socket.io-client';
+import Mic from './Mic';
+import ChatBox from './ChatBox';
+import './App.css';
 const ENDPOINT = process.env.REACT_APP_SOCKET_ENDPOINT;
 
 let socket = null;
 export default class App extends React.Component {
   constructor(props) {
-    console.log("ENDPOINT", ENDPOINT);
     super(props);
+    //ENDPOINT is set in .env file
     socket = socketIOClient(ENDPOINT);
     this.onRecordingReceive = this.onRecordingReceive.bind(this);
-    this.state = {
-      record: false,
-    };
   }
 
   onRecordingReceive(blob) {
-    if (socket) socket.emit("audio_blob_to_server", blob);
+    //Emit audio blob on every 100 milisecond.
+    if (socket) socket.emit('audio_blob_to_server', blob);
   }
 
   render() {

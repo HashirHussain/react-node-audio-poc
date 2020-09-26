@@ -9,6 +9,7 @@ In the project directory, you can run:
 ### `npm install`
 
 Install all the dependencies available in `package.json` file.
+If you are facing problem while installation, try again after removing `node_modules` and `package.lock.json`.
 
 ### `npm start:frontend`
 
@@ -42,3 +43,9 @@ This component receives blob object from server via `audio_blob_to_client` liste
 ### Node.js Component
 
 `server/index.js` hold the `express.js` server as well as socket.io connection.
+
+`For more details visit each component`.
+
+### Browser Compatibility
+
+Works well on edge(latest), chrome and firefox.
